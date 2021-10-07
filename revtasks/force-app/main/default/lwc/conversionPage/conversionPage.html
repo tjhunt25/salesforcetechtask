@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_2-of-3 slds-p-around_small">
+                <lightning-input type="text" value={currencies} placeholder="Search multiple currencies in comma-delimited" label="Currencies" onchange={handleChange} variant="label-hidden"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                <lightning-button label="Seach" variant="brand" onclick={handleSearch}></lightning-button>
+            </div>
+            <div class="slds-p-around_small">
+                <span class="slds-p-bottom_small">Base Currency: EUR</span>
+                <lightning-datatable
+                    key-field="Id"
+                    data={rates}
+                    columns={ratesColumns}
+                    hide-checkbox-column
+                >
+                </lightning-datatable>
+            </div>
+        </div>
+    </lightning-card>
+</template>

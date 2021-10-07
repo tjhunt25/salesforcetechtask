@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Opportunity Filter" icon-name="standard:opportunity"> 
+        <div if:true={isLoading}>
+            <lightning-spinner variant="brand" size="small">
+        </lightning-spinner>
+        </div>
+        <div class="slds-p-horizontal_medium">
+            <lightning-combobox name="Stage" label="Opportunity Stage" options={oppStages} value={oppStage} onchange={handleChange}> </lightning-combobox> 
+       </div>
+        <div class="slds-p-around_small">
+            <lightning-datatable
+                key-field="Id"
+                data={opportunitiesData}
+                columns={opportunityColumns}
+                show-row-number-column
+                hide-checkbox-column
+            >
+
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
